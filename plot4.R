@@ -7,6 +7,7 @@ data$DateTime <- strptime(paste(data$Date, data$Time, sep=" "),
 d <- data[as.Date(data$DateTime) >= as.Date("2007-02-01") & 
               as.Date(data$DateTime) <= as.Date("2007-02-02"), ]
 
+#the plot
 par(mfrow = c(2,2))
 with(d, {
     plot(DateTime, Global_active_power, type="l", 

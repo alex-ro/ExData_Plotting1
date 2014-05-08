@@ -15,8 +15,8 @@ with(d, {
          xlab="datetime", ylab="Voltage")
     plot(DateTime, Sub_metering_1, type="l", 
          xlab="", ylab="Energy sub metering")
-    lines(d$DateTime, d$Sub_metering_2, col="red")
-    lines(d$DateTime, d$Sub_metering_3, col="blue")
+    lines(DateTime, Sub_metering_2, col="red")
+    lines(DateTime, Sub_metering_3, col="blue")
     legend("topright", cex=0.7, bty="n", lty=c(1,1), col=c("black", "red", "blue"), 
            legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
     plot(DateTime, Global_reactive_power, type="l", 

@@ -7,9 +7,14 @@ data$DateTime <- strptime(paste(data$Date, data$Time, sep=" "),
 d <- data[as.Date(data$DateTime) >= as.Date("2007-02-01") & 
               as.Date(data$DateTime) <= as.Date("2007-02-02"), ]
 
-#the plot
+# the graphics device
+# this uses a transparent background resulting in a .png file identical to the 
+# one provided in folder ./figure
+# I also put the plot with white background in the repository
+png("plot1.png", width=480, height=480, bg = "transparent")
+
+# the plot
 hist(d$Global_active_power, xlab="Global Active Power (kilowatts)", 
      col="red", main="Global Active Power")
 
-dev.copy(png, filename="plot1.png", width=480, height=480)
 dev.off()

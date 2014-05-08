@@ -6,6 +6,11 @@ data$DateTime <- strptime(paste(data$Date, data$Time, sep=" "),
 
 d <- data[as.Date(data$DateTime) >= as.Date("2007-02-01") & 
               as.Date(data$DateTime) <= as.Date("2007-02-02"), ]
+# the graphics device
+# this uses a transparent background resulting in a .png file identical to the 
+# one provided in folder ./figure
+# I also put the plot with white background in the repository
+png("plot4.png", width=480, height=480, bg = "transparent")
 
 #the plot
 par(mfrow = c(2,2))
@@ -24,5 +29,4 @@ with(d, {
          xlab="datetime", ylab="Global_reactive_Power")
 })
 
-dev.copy(png, filename="plot4.png", width=480, height=480)
 dev.off()
